@@ -1,7 +1,13 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 function Gallery() {
-  return <h2>Gallery</h2>;
+  return (
+    <>
+      <Navbar />
+      <h2 className="text-center">Gallery</h2>
+    </>
+  );
 }
 
 export default Gallery;

@@ -1,7 +1,13 @@
 import React from "react";
+import Navbar from "../components/Navbar";
 
 function About() {
-  return <h2>Faisal Photographer</h2>;
+  return (
+    <>
+      <Navbar />
+      <h2 className="text-center">About Me</h2>
+    </>
+  );
 }
 
 export default About;

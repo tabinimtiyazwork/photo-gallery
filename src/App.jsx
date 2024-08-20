@@ -1,12 +1,14 @@
 import "./App.css";
 import { Outlet } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
+import BackgroundWrapper from "./components/BackgroundWrapper";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <Outlet />
+      <BackgroundWrapper>
+        <Header />
+      </BackgroundWrapper>
     </>
   );
 }
