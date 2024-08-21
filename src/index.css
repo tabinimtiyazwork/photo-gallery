@@ -3,6 +3,6 @@
 @tailwind utilities;
 @layer utilities {
   .nav-link-hover {
-    @apply hover:text-slate-300 transition duration-300 ease-in-out;
+    @apply hover:text-gray-300 transition duration-300 ease-in-out;
   }
 }
