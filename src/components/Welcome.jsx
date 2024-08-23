@@ -3,13 +3,13 @@ import React from "react";
 function Welcome() {
   return (
     <section
-      className="relative flex items-center justify-start min-h-[100vh] w-full bg-cover bg-center bg-no-repeat"
+      className="relative flex items-center justify-start min-h-[95vh] w-full bg-cover bg-center bg-no-repeat"
       style={{
         backgroundImage: "url('/src/assets/b2.webp')",
       }}
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black bg-opacity-85"></div>
+      <div className="absolute inset-0 bg-black bg-opacity-80"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl px-8 py-16 sm:px-20 lg:px-20 max-sm:text-center max-sm:items-center max-sm:justify-center max-sm:px-8">

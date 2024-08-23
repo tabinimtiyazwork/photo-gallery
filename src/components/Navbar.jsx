@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const isActive = (path) => {
+    return location.pathname == path ? "active-link" : "";
+  };
+
   return (
-    <nav className="bg-navbar-bg bg-opacity-70 text-white py-3 max-sm:px-10 px-20 fixed top-0 w-full z-20">
+    <nav className="bg-white bg-opacity-5 text-white py-3 max-sm:px-10 px-20 fixed top-0 w-full z-20">
       <div className="flex justify-between items-center">
         <div
           className="text-xl font-bold"
@@ -20,17 +25,23 @@ function Navbar() {
 
         <ul className="hidden md:flex justify-start space-x-10">
           <li>
-            <Link to="/" className="nav-link-hover">
+            <Link to="/" className={`nav-link-hover ${isActive("/")}`}>
               Home
             </Link>
           </li>
           <li>
-            <Link to="/gallery" className="nav-link-hover">
+            <Link
+              to="/gallery"
+              className={`nav-link-hover ${isActive("/gallery")}`}
+            >
               Gallery
             </Link>
           </li>
           <li>
-            <Link to="/about" className="nav-link-hover">
+            <Link
+              to="/about"
+              className={`nav-link-hover ${isActive("/about")}`}
+            >
               About
             </Link>
           </li>
@@ -63,17 +74,17 @@ function Navbar() {
         <div className="md:hidden">
           <ul className="flex flex-col space-y-2 px-4 pt-4 pb-2">
             <li>
-              <Link to="/" className="block py-2 hover:bg-gray-700">
+              <Link to="/" className="block py-2">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/gallery" className="block py-2 hover:bg-gray-700">
+              <Link to="/gallery" className="block py-2">
                 Gallery
               </Link>
             </li>
             <li>
-              <Link to="/about" className="block py-2 hover:bg-gray-700">
+              <Link to="/about" className="block py-2">
                 About
               </Link>
             </li>
