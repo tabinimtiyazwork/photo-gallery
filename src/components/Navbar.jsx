@@ -10,25 +10,21 @@ function Navbar() {
   };
 
   const isActive = (path) => {
-    return location.pathname == path ? "active-link" : "";
+    return location.pathname === path ? "active-link" : "";
   };
 
   return (
-    <nav className="bg-white bg-opacity-5 text-white py-3 max-sm:px-10 px-20 fixed top-0 w-full z-20">
+    <nav className="bg-white bg-opacity-5 backdrop-blur-sm text-white py-3 max-sm:px-10 px-20 fixed top-0 w-full z-20">
       <div className="flex justify-between items-center">
-        <div
+        <Link
+          to="/"
           className="text-xl font-bold"
           style={{ fontFamily: "'Dancing Script', cursive" }}
         >
           faisal
-        </div>
+        </Link>
 
         <ul className="hidden md:flex justify-start space-x-10">
-          <li>
-            <Link to="/" className={`nav-link-hover ${isActive("/")}`}>
-              Home
-            </Link>
-          </li>
           <li>
             <Link
               to="/gallery"
@@ -43,6 +39,14 @@ function Navbar() {
               className={`nav-link-hover ${isActive("/about")}`}
             >
               About
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/social"
+              className={`nav-link-hover ${isActive("/portfolio")}`}
+            >
+              Socials
             </Link>
           </li>
         </ul>
@@ -74,11 +78,6 @@ function Navbar() {
         <div className="md:hidden">
           <ul className="flex flex-col space-y-2 px-4 pt-4 pb-2">
             <li>
-              <Link to="/" className="block py-2">
-                Home
-              </Link>
-            </li>
-            <li>
               <Link to="/gallery" className="block py-2">
                 Gallery
               </Link>
@@ -86,6 +85,11 @@ function Navbar() {
             <li>
               <Link to="/about" className="block py-2">
                 About
+              </Link>
+            </li>
+            <li>
+              <Link to="/social" className="block py-2">
+                Socials
               </Link>
             </li>
           </ul>

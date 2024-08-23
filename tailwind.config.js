@@ -9,7 +9,7 @@ export default {
       colors: {
         'navbar-bg': '#2e2e2e',
         'navbar-text': '#9ca3af',
-        'background-primary': '#f7f7f7',
+        'bg-color': '#303030',
         'button-primary': '#38b2ac',
         'button-hover': '#f97316',
         'footer-bg': '#0f0f0f',

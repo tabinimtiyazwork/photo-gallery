@@ -3,7 +3,7 @@ import React from "react";
 function Welcome() {
   return (
     <section
-      className="relative flex items-center justify-start min-h-[95vh] w-full bg-cover bg-center bg-no-repeat"
+      className="relative flex items-center justify-start min-h-[calc(100vh-6vh)] w-full bg-cover bg-center bg-no-repeat pt-16" // Adjusted padding-top
       style={{
         backgroundImage: "url('/src/assets/b2.webp')",
       }}
@@ -22,7 +22,7 @@ function Welcome() {
         </p>
         <a
           href="/gallery"
-          className="inline-block bg-button-primary hover:bg-button-hover text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 md:py-3 md:px-7 rounded transition duration-300"
+          className="inline-block bg-button-primary max-lg:hover:bg-button-hover active:bg-button-hover text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 md:py-3 md:px-7 rounded transition duration-300"
         >
           Explore the Gallery
         </a>

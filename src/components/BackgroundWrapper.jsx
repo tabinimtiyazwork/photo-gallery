@@ -1,11 +1,7 @@
 import React from "react";
-import { useLocation } from "react-router-dom";
 
 function BackgroundWrapper({ children }) {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-
-  return <div></div>;
+  return <div className="min-h-screen w-full bg-bg-color">{children}</div>;
 }
 
 export default BackgroundWrapper;

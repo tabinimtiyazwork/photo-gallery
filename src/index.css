@@ -5,4 +5,8 @@
   .nav-link-hover {
     @apply hover:text-gray-300 transition duration-300 ease-in-out;
   }
+  * {
+    @apply box-border m-0 p-0;
+  }
+
 }
