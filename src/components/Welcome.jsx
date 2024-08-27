@@ -22,7 +22,7 @@ function Welcome() {
         </p>
         <a
           href="/gallery"
-          className="inline-block bg-button-primary max-lg:hover:bg-button-hover active:bg-button-hover text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 md:py-3 md:px-7 rounded transition duration-300"
+          className="inline-block bg-button-primary md:hover:bg-button-hover text-white font-semibold py-2 px-4 sm:py-3 sm:px-6 md:py-3 md:px-7 rounded transition duration-300"
         >
           Explore the Gallery
         </a>

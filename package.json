@@ -11,8 +11,12 @@
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.5.7",
+    "imagesloaded": "^5.0.0",
+    "packery": "^2.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-packery-component": "^1.0.2",
+    "react-responsive-masonry": "^2.3.0",
     "react-router-dom": "^6.26.1"
   },
   "devDependencies": {

@@ -14,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white bg-opacity-5 backdrop-blur-sm text-white py-3 max-sm:px-10 px-20 fixed top-0 w-full z-20">
+    <nav className="bg-white bg-opacity-5 backdrop-blur-md md:backdrop-blur-sm text-white py-3 max-sm:px-10 px-20 fixed top-0 w-full z-20">
       <div className="flex justify-between items-center">
         <Link
           to="/"
