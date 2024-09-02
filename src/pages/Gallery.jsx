@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { HiOutlineDownload, HiOutlineArrowsExpand } from "react-icons/hi"; // Importing icons from Heroicons
 import BackgroundWrapper from "../components/BackgroundWrapper";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import LargeScreenCard from "../components/LargeScreenCard";
+import MobileScreenCard from "../components/MobileScreenCard";
 import placeholder from "/src/assets/images/placeholder-image.jpg"; // Import your placeholder image
 
 const images = [
@@ -27,51 +28,43 @@ const images = [
 ];
 
 function Gallery() {
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   return (
     <BackgroundWrapper>
       <Navbar />
-      <div className="pt-20 pb-5 sm:mx-10 md:mx-20 lg:mx-20 xl:mx-40 min-h-[94vh]">
+      <div className="pt-20 pb-5 md:mx-5 lg:mx-20 xl:mx-40 min-h-[94vh]">
         <ResponsiveMasonry
           columnsCountBreakPoints={{
             350: 1,
-            750: 2,
+            767: 2,
             900: 3,
           }}
         >
           <Masonry gutter="20px">
-            {images.map((image, index) => (
-              <div key={index} className="relative group">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-auto object-cover"
-                  onError={(e) => {
-                    e.target.src = placeholder;
-                  }}
+            {images.map((image, index) =>
+              isMobile ? (
+                <MobileScreenCard
+                  key={index}
+                  image={image}
+                  placeholder={placeholder}
                 />
-                {/* Combined overlay, logo, and icons container */}
-                <div className="absolute inset-0 md:flex justify-between items-start p-2 bg-black bg-opacity-0 lg:group-hover:bg-opacity-50 transition-opacity duration-300 cursor-zoom-in">
-                  {/* Top-left logo */}
-                  <div className="opacity-0 md:group-hover:opacity-100 transition-opacity duration-300 z-20">
-                    <img
-                      src="/src/assets/Logo.png"
-                      className="w-1/2 h-auto"
-                      alt="Logo"
-                    />
-                  </div>
-
-                  {/* Top-right buttons */}
-                  <div className="flex space-x-2 opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 z-20">
-                    <button className="text-black bg-white bg-opacity-60 p-2 rounded hover:bg-opacity-80">
-                      <HiOutlineArrowsExpand />
-                    </button>
-                    <button className="text-black bg-white bg-opacity-60 p-2 rounded hover:bg-opacity-80">
-                      <HiOutlineDownload />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+              ) : (
+                <LargeScreenCard
+                  key={index}
+                  image={image}
+                  placeholder={placeholder}
+                />
+              )
+            )}
           </Masonry>
         </ResponsiveMasonry>
       </div>
