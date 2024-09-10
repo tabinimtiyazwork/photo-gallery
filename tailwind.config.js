@@ -1,23 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
-        'navbar-bg': '#2e2e2e',
-        'navbar-text': '#9ca3af',
-        'bg-color': '#303030',
-        'button-primary': '#38b2ac',
-        'button-hover': '#f97316',
-        'footer-bg': '#0f0f0f',
-        'footer-bg-2': '#1a1a1a',
-        'footer-bg-3': '#121212',
+        "primary-bg": "#2e2e2e",
+        "secondary-bg": "#edecec",
+        "backdrop-color": "#000",
+        "button-primary": "#38b2ac",
+        "button-hover": "#f97316",
+        "footer-bg": "#121212",
+        "text-main": "#fff",
+        "text-muted": "#939393",
       },
     },
   },
-  plugins: [ require('@tailwindcss/forms'),],
-}
-
+  plugins: [require("@tailwindcss/forms")],
+};
