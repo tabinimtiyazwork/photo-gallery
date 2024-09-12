@@ -4,7 +4,7 @@ import "react-image-gallery/styles/css/image-gallery.css";
 
 function LargeScreenCard({ image, placeholder, onClickView }) {
   return (
-    <div className="relative group">
+    <div className="relative group" onClick={onClickView}>
       <img
         src={image.src}
         alt={image.alt}
